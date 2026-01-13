@@ -1,7 +1,7 @@
 
 <div class="hero">
     <h1>Bienvenue sur Mangaddict !</h1>
-    <p>Les meilleurs mangas pour les vrais otaku</p>
+    <p>Les meilleurs mangas pour les vrais otaku (et c'est tout rose !)</p>
 </div>
 
 <div class="product-grid">

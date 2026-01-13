@@ -2,7 +2,7 @@
 <div class="auth-form">
     <h2>Rejoins la team Mangaddict !</h2>
     <form action="index.php?url=home/storeUser" method="POST">
-        <label>Pseudo</label>
+        <label>Pseudo (Manga name ?)</label>
         <input type="text" name="username" required>
         
         <label>Email</label>

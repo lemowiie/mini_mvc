@@ -1,7 +1,7 @@
 
-<h2>Mon Panier  </h2>
+<h2>Mon Panier Kawaii 🛍️</h2>
 <?php if(empty($cart)): ?>
-    <p>votre panier est vide... allez vite acheter des mangas !</p>
+    <p>Votre panier est vide... Allez vite acheter des mangas !</p>
 <?php else: ?>
     <table class="kitty-table">
         <thead>
@@ -27,6 +27,6 @@
     </table>
     <div class="cart-total">
         <h3>Total à payer : <?= $total ?> €</h3>
-        <a href="index.php?url=product/checkout" class="btn btn-big">Valider la commande </a>
+        <a href="index.php?url=product/checkout" class="btn btn-big">Valider la commande 💖</a>
     </div>
 <?php endif; ?>

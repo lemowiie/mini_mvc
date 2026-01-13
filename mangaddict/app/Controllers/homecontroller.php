@@ -6,16 +6,19 @@ require_once __DIR__ . '/../Models/Order.php';
 
 class HomeController extends Controller {
     
+    // Page d'accueil : Liste des produits
     public function index() {
         $productModel = new Product();
         $products = $productModel->getAllWithCategory();
         $this->view('home/index', ['products' => $products]);
     }
 
+    // Affichage formulaire inscription
     public function register() {
         $this->view('home/create-user');
     }
 
+    // Traitement inscription
     public function storeUser() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $userModel = new User();
@@ -27,9 +30,12 @@ class HomeController extends Controller {
         }
     }
 
+    // Page de connexion
     public function login() {
-        $this->view('home/users'); 
+        $this->view('home/users'); // On utilise ce fichier pour le login comme demandé par la structure vague
     }
+
+    // Traitement connexion
     public function auth() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $userModel = new User();
@@ -50,6 +56,7 @@ class HomeController extends Controller {
         header('Location: index.php');
     }
     
+    // Historique des commandes (Bonus)
     public function history() {
         if (!isset($_SESSION['user_id'])) $this->redirect('index.php?url=home/login');
         

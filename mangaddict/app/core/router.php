@@ -1,13 +1,16 @@
 <?php
 class Router {
     public function run() {
-
+        // URL format: index.php?url=Controller/Action
         $url = isset($_GET['url']) ? explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL)) : [];
         
+        // Default controller: Home
         $controllerName = !empty($url[0]) ? ucfirst($url[0]) . 'Controller' : 'HomeController';
         $method = !empty($url[1]) ? $url[1] : 'index';
         $params = array_slice($url, 2);
 
+        // Mapping simple pour respecter la structure demandée
+        // Si l'utilisateur demande "product", on va chercher ProductController
         
         $controllerPath = __DIR__ . '/../Controllers/' . $controllerName . '.php';
 

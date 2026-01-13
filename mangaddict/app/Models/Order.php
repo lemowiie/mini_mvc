@@ -8,11 +8,12 @@ class Order extends Model {
         try {
             $this->db->beginTransaction();
 
-
+            // 1. Créer la commande
             $stmt = $this->db->prepare("INSERT INTO orders (user_id, total_price) VALUES (:uid, :total)");
             $stmt->execute(['uid' => $userId, 'total' => $total]);
             $orderId = $this->db->lastInsertId();
 
+            // 2. Insérer les items
             $stmtItem = $this->db->prepare("INSERT INTO order_items (order_id, product_id, quantity, price_at_purchase) VALUES (:oid, :pid, :qty, :price)");
             
             foreach ($cartItems as $item) {
